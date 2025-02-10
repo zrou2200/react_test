@@ -2,7 +2,7 @@
 
 import { useFormState } from "react-dom";
 import { useFormStatus } from "react-dom";
-import { createUser } from "@/app/actions";
+import { createUser } from "@/apps/web/src/actions";
 import { useRouter } from "next/navigation"
 
 const initialState = {

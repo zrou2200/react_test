@@ -1,7 +1,7 @@
 import postgres from "postgres";
 
-import { AddForm } from "@/app/helpers/add-form";
-import { DeleteForm } from "@/app/helpers/delete-form";
+import { AddForm } from "@/apps/web/src/app/helpers/add-form";
+import { DeleteForm } from "@/apps/web/src/app/helpers/delete-form";
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",

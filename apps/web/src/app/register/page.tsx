@@ -1,8 +1,8 @@
 
 import postgres from "postgres";
 
-import { AddUser } from "@/app/helpers/add-user";
-import { DeleteUser } from "@/app/helpers/delete-user";
+import { AddUser } from "@/apps/web/src/app/helpers/add-user";
+import { DeleteUser } from "@/apps/web/src/app/helpers/delete-user";
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",

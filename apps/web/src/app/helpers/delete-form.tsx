@@ -2,7 +2,7 @@
 
 import { useFormState } from "react-dom";
 import { useFormStatus } from "react-dom";
-import { deleteUser } from "@/app/actions";
+import { deleteTodo } from "@/apps/web/src/actions";
 
 const initialState = {
   message: "",
@@ -18,14 +18,14 @@ function DeleteButton() {
   );
 }
 
-export function DeleteUser({ id, username }: { id: number; username: string }) {
+export function DeleteForm({ id, todo }: { id: number; todo: string }) {
   // useActionState is available with React 19 (Next.js App Router)
-  const [state, formAction] = useFormState(deleteUser, initialState);
+  const [state, formAction] = useFormState(deleteTodo, initialState);
 
   return (
     <form action={formAction}>
       <input type="hidden" name="id" value={id} />
-      <input type="hidden" name="username" value={username} />
+      <input type="hidden" name="todo" value={todo} />
       <DeleteButton />
       <p aria-live="polite" className="sr-only" role="status">
         {state?.message}
