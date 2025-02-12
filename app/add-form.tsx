@@ -1,32 +1,32 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { deleteUser } from "@/app/actions";
+import { createTodo } from "@/app/actions";
 
 const initialState = {
   message: "",
 };
 
-function DeleteButton() {
+function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
     <button type="submit" aria-disabled={pending}>
-      Delete
+      Add
     </button>
   );
 }
 
-export function DeleteUser({ id, username }: { id: number; username: string }) {
+export function AddForm() {
   // useActionState is available with React 19 (Next.js App Router)
-  const [state, formAction] = useFormState(deleteUser, initialState);
+  const [state, formAction] = useActionState(createTodo, initialState);
 
   return (
     <form action={formAction}>
-      <input type="hidden" name="id" value={id} />
-      <input type="hidden" name="username" value={username} />
-      <DeleteButton />
+      <label htmlFor="todo">Enter Task</label>
+      <input type="text" id="todo" name="todo" required />
+      <SubmitButton />
       <p aria-live="polite" className="sr-only" role="status">
         {state?.message}
       </p>

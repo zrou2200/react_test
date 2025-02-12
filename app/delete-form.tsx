@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { deleteTodo } from "@/app/actions";
 
@@ -20,7 +20,7 @@ function DeleteButton() {
 
 export function DeleteForm({ id, todo }: { id: number; todo: string }) {
   // useActionState is available with React 19 (Next.js App Router)
-  const [state, formAction] = useFormState(deleteTodo, initialState);
+  const [state, formAction] = useActionState(deleteTodo, initialState);
 
   return (
     <form action={formAction}>
