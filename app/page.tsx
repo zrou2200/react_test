@@ -1,7 +1,8 @@
 import postgres from "postgres";
 
-import { AddForm } from "@/app/add-form";
-import { DeleteForm } from "@/app/delete-form";
+import { AddForm } from "@/app/public/add-form";
+import { DeleteForm } from "@/app/public/delete-form";
+import { TourProvider} from '@reactour/tour';
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",
@@ -25,3 +26,4 @@ export default async function Home() {
     </main>
   );
 }
+

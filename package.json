@@ -6,13 +6,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reactour/tour": "^3.7.0",
     "@types/node": "20.10.6",
     "@types/react": "18.2.46",
     "@types/react-dom": "18.2.18",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "next": "canary",
+    "pg": "^8.14.0",
     "postgres": "^3.4.3",
     "react": "rc",
     "react-dom": "rc",
+    "reactour": "^1.19.4",
     "typescript": "5.3.3",
     "zod": "^3.22.4"
   }
